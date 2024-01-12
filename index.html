@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- Ajax -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+        <!-- Vue -->
+        <script src="https://unpkg.com/vue@3"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body>
+
+        <div id="app">
+            <!-- il v-if è per il bonus -->
+            <ul v-if="emails.length >= numeroIndirizzi">
+                <li v-for="(email, index) in emails">
+                    {{ index + 1 }} : {{ email }}
+                </li>
+            </ul>
+            <div v-else>Caricamento in corso...<br>
+                Sono al {{ Math.floor((emails.length / numeroIndirizzi) * 100) }}%
+            </div>
+        </div>
+        <!-- mio js -->
+        
+        <script type="text/javascript" src="js/scripts.js">
+        </script>
+        
+    </body>
+
 </html>
